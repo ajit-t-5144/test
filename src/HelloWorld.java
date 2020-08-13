@@ -5,6 +5,10 @@ public class HelloWorld {
 		// TODO Auto-generated method stub
 		
 	System.out.println("Hello World");
+	
+	int a = 5; int b = 10 ; int c = a +b;
+	
+	System.out.println(" Value of a + b is :" + c );
 
 	}
 
