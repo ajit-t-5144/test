@@ -1,3 +1,10 @@
 /bin/
 .classpath
 .project
+.bash_logout
+.bashrc
+.cache/
+.profile
+.ssh/
+.viminfo
+
