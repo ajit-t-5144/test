@@ -1,8 +1,12 @@
 pipeline {
   agent any
   
-   define buildnum = currentBuild.getNumber() 
-  
+  environment {
+    
+    define buildnum = currentBuild.getNumber() 
+    
+  }
+ 
   
   stages {
     stage('TestBlaze') {
