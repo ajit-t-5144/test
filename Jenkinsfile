@@ -3,7 +3,8 @@ pipeline {
   
   environment {
     
-    buildnum = currentBuild.getNumber() 
+    buildnum = currentBuild.getNumber()
+    buildtime = currentBuild.getTime().format("yyyy-MM-dd_HH-mm-ss")
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
     gitBranch = "*/master"
@@ -22,6 +23,8 @@ pipeline {
         echo "current build number: ${currentBuild.number}"
        
         echo "${buildnum}"
+        
+        echo "${buildtime}"
         
          echo "${env.BUILD_DATE_FORMATTED}"
         
