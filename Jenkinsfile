@@ -16,7 +16,7 @@ pipeline {
        
         echo "${buildnum}"
         //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
-        //slackSend channel: '#devops', message: "${buildnum}"
+        slackSend channel: '#personal', message: "${buildnum}"
       
       }
     }
