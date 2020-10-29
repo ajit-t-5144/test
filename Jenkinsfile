@@ -8,7 +8,7 @@ pipeline {
        always {
            jiraSendDeploymentInfo environmentId: 'test', environmentName: 'test', environmentType: 'testing', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
        }
-      
+        }
       }
     }
 
