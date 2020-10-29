@@ -4,7 +4,6 @@ pipeline {
   environment {
     
     buildnum = currentBuild.getNumber()
-    buildtime = currentBuild.getTime().format("yyyy-MM-dd_HH-mm-ss")
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
     gitBranch = "*/master"
@@ -23,15 +22,7 @@ pipeline {
         echo "current build number: ${currentBuild.number}"
        
         echo "${buildnum}"
-        
-        echo "${buildtime}"
-        
-         echo "${env.BUILD_DATE_FORMATTED}"
-        
-        echo "${env.BUILD_DATE}"
-        
-        echo "${env.BUILD_TIMESTAMP}"
-        
+       
         //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
         slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
       
