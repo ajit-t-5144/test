@@ -3,7 +3,7 @@ pipeline {
   
   environment {
     
-    define buildnum = currentBuild.getNumber() 
+    buildnum = currentBuild.getNumber() 
     
   }
  
