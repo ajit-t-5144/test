@@ -23,11 +23,11 @@ pipeline {
        
         echo "${buildnum}"
         
-         echo "${BUILD_DATE_FORMATTED}"
+         echo "${env.BUILD_DATE_FORMATTED}"
         
-        echo "${BUILD_DATE_FORMATTED}"
+        echo "${env.BUILD_DATE}"
         
-        echo "${BUILD_TIMESTAMP}"
+        echo "${env.BUILD_TIMESTAMP}"
         
         //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
         slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
