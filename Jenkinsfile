@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('TestBlaze') {
       steps {
-        echo 'Blazemetertest'
-        blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
+        echo 'send jira deployment
+        jiraSendDeploymentInfo environmentId: 'test', environmentName: 'test', environmentType: 'testing', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
       }
     }
 
