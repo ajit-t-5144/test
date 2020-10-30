@@ -14,19 +14,10 @@ pipeline {
     
   }
 
-  
+
   stages {
     stage('TestBlaze') {
-      steps {
-        echo 'send jira deployment'
-        echo "current build number: ${currentBuild.number}"
-       
-        echo "${buildnum}"
         
-        echo " sonar host url is ${SONARurl}"
-       
-        //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
-        slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
         parallel{
               
               Stage ('1'){ echo " this is step a "}
@@ -34,7 +25,7 @@ pipeline {
               Stage ('3') { echo " this is step c "}
           
         } //Para end
-      
+      slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
       }
     }
 
