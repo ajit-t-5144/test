@@ -26,9 +26,7 @@ pipeline {
           
         } //Para end
       slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
-      }
-    }
-
-
+      } // Stage end 
+    
   } // stages end
 } // pipeline end 
