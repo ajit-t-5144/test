@@ -4,7 +4,7 @@ pipeline {
   environment {
     
     buildnum = currentBuild.getNumber()
-    status = currentBuild.getcurrentResult()
+    status = currentBuild.getCurrentResult()
     status2 = currentBuild.getResult()
     //BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
     
