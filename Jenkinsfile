@@ -27,14 +27,14 @@ pipeline {
                           steps {
                                 echo " this is step a " 
                                 slackSend channel: '#personal', message: 'this is a Test message from build ' + "${buildnum}"
-                                echo TimeStamp
+                                echo "${BUILD_TIMESTAMP}"
                                 }
                         }
               stage ('2'){ 
                           steps {
                                 echo " this is step b " 
                                 slackSend channel: '#personal', message: 'this is a Test message from build ' + "${buildnum}"
-                                echo TimeStamp
+                                 echo "${BUILD_TIMESTAMP}"
                                 }
                         }
 
