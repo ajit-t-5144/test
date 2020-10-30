@@ -4,6 +4,7 @@ pipeline {
   environment {
     
     buildnum = currentBuild.getNumber()
+    BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
     gitBranch = "*/master"
@@ -37,6 +38,14 @@ pipeline {
         } //Para end
       
       } // Stage end 
+    
+    stage('send email'){
+      
+      steps {
+        mail bcc: '', body: '''build completed successfully . ${BUILD_STATUS} : Jenkins Build ${ buildnum}''', cc: '', from: '', replyTo: '', subject: '${BUILD_STATUS} : Jenkins Build ${ buildnum}', to: 'ajit.rsahu@gmail.com'
+      }
+      
+    }//send email end 
     
   } // stages end
 } // pipeline end 
