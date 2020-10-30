@@ -43,7 +43,8 @@ pipeline {
     stage('send email'){
       
       steps {
-        mail bcc: '', body: '''build completed successfully . ${BUILD_STATUS} : Jenkins Build ${ buildnum}''', cc: '', from: '', replyTo: '', subject: '${BUILD_STATUS} : Jenkins Build ${ buildnum}', to: 'ajit.rsahu@gmail.com'
+        echo ' BUILD STATUS ${BUILD_STATUS}
+        mail bcc: '', body: ' BUILD SUCCESSFUL', cc: '', from: '', replyTo: '', subject: ' Jenkins Build ', to: 'ajit.rsahu@gmail.com'
       }
       
     }//send email end 
