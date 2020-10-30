@@ -4,7 +4,8 @@ pipeline {
   environment {
     
     buildnum = currentBuild.getNumber()
-    BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
+    BUILD_STATUS = currentBuild.currentResult()
+    //BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
     gitBranch = "*/master"
