@@ -5,7 +5,7 @@ pipeline {
     
     buildnum = currentBuild.getNumber()
     status = currentBuild.getcurrentResult()
-    status2 = currentBuild.getresult()
+    status2 = currentBuild.getResult()
     //BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
