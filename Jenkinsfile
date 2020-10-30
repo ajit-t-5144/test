@@ -35,6 +35,7 @@ pipeline {
                                 echo " this is step b " 
                                 slackSend channel: '#personal', message: "${currentBuild.currentResult}" + 'this is a Test message from build ' + "${buildnum}" + "${BUILD_TIMESTAMP}"
                                  echo "${BUILD_TIMESTAMP}"
+                                jiraAddComment comment: 'Hello World ', idOrKey: 'DEV-2', site: 'ajitsahu.atlassian.net'
                                 }
                         }
 
