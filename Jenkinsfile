@@ -8,7 +8,7 @@ pipeline {
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
     gitBranch = "*/master"
     
-    //sonarUrl = env.SONAR_HOST_URL()
+    SONAR_HOST_URL = 'http://13.64.108.228:9000'
     
     echo " sonar host url is ${SONAR_HOST_URL}"
     
