@@ -20,9 +20,19 @@ pipeline {
         
         parallel{
               
-              stage ('1'){ steps {echo " this is step a " slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"}}
-              stage ('2'){ steps {echo " this is step b " slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"}}
-              stage ('3'){ steps {echo " this is step c" slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}" }}
+              stage ('1'){ 
+                          steps {
+                                echo " this is step a " 
+                                slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
+                                }
+                        }
+              stage ('2'){ 
+                          steps {
+                                echo " this is step b " 
+                                slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
+                                }
+                        }
+
           
         } //Para end
       
