@@ -13,7 +13,7 @@ pipeline {
     
     SONARurl = 'http://13.64.108.228:9000'
     
-    TimeStamp = currentBuild.startTimeInMillis()
+    TimeStamp = currentBuild.getStartTimeInMillis()
     
   }
 
