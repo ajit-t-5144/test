@@ -13,7 +13,7 @@ pipeline {
     
     SONARurl = 'http://13.64.108.228:9000'
     
-    TimeStamp = BUILD_TIMESTAMP
+    TimeStamp = env.BUILD_TIMESTAMP
     
   }
 
