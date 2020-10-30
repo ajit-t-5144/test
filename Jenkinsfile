@@ -13,7 +13,7 @@ pipeline {
     
     SONARurl = 'http://13.64.108.228:9000'
     
-    TimeStamp = env.BUILD_TIMESTAMP
+    //TimeStamp = env.BUILD_TIMESTAMP
     
   }
 
@@ -33,7 +33,7 @@ pipeline {
               stage ('2'){ 
                           steps {
                                 echo " this is step b " 
-                                slackSend channel: '#personal', message: 'this is a Test message from build ' + "${buildnum}" + "${TimeStamp}"
+                                slackSend channel: '#personal', message: "${currentBuild.currentResult}" + 'this is a Test message from build ' + "${buildnum}" + "${BUILD_TIMESTAMP}"
                                  echo "${BUILD_TIMESTAMP}"
                                 }
                         }
