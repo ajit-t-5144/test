@@ -4,7 +4,8 @@ pipeline {
   environment {
     
     buildnum = currentBuild.getNumber()
-    BUILD_STATUS = currentBuild.getCurrentResult()
+    status = currentBuild.getcurrentResult()
+    status2 = currentBuild.getresult()
     //BUILD_STATUS=$(curl --silent ${BUILD_URL}api/json | jq -r '.result')
     
     gitURL = "https://github.com/ajit-t-5144/DevOps-Demo-WebApp.git"
@@ -43,7 +44,8 @@ pipeline {
     stage('send email'){
       
       steps {
-        echo ' BUILD STATUS ${BUILD_STATUS}'
+        echo '${status}'
+        echo '${status2}'
         mail bcc: '', body: ' BUILD SUCCESSFUL', cc: '', from: '', replyTo: '', subject: ' Jenkins Build ', to: 'ajit.rsahu@gmail.com'
       }
       
