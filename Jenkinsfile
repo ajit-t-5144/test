@@ -27,22 +27,16 @@ pipeline {
        
         //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
         slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
-      
-      }
-    }
-
-    //Parallel Stage Start 
-    stages {
-      
-      steps {
-            parallel(
+        parallel(
               
               a: { echo " this is step a "},
               b: { echo " this is step b "},
               c: { echo " this is step c "}
             )
+      
       }
-    } // Parallel Stage end 
+    }
+
 
   } // stages end
 } // pipeline end 
