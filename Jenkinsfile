@@ -10,7 +10,7 @@ pipeline {
     
     SONARurl = 'http://13.64.108.228:9000'
     
-    echo " sonar host url is ${SONARurl}"
+    
     
   }
  
@@ -26,6 +26,8 @@ pipeline {
         echo "current build number: ${currentBuild.number}"
        
         echo "${buildnum}"
+        
+        echo " sonar host url is ${SONARurl}"
        
         //slackSend channel: '#devops', message: 'this is a Test message  from build ${currentBuild.number}'
         slackSend channel: '#personal', message: 'this is a Test message  from build ' + "${buildnum}"
