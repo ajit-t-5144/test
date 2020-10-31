@@ -39,7 +39,7 @@ pipeline {
                                 //echo "${BUILD_TIMESTAMP}"
                                // jiraAddComment comment: '"hello World"', idOrKey: 'dev-4', site: 'jira'
                                 
-                                define transitionInput = [transition: [id: 'dev-4']]
+                                def transitionInput = [transition: [id: 'dev-4']]
                             
                                 jiraTransitionIssue idOrKey: 'dev-4',site: 'jira', input: transitionInput
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net'
