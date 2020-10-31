@@ -1,3 +1,7 @@
+//this is define section 
+
+def transitionInput = [transition: [id: '11']]
+
 pipeline {
   agent any
   
@@ -44,6 +48,7 @@ pipeline {
                         }
               stage ('2'){ 
                           steps {
+                                
                                 echo " this is step b " 
                                 //slackSend channel: '#personal', message: "${currentBuild.currentResult}" + 'this is a Test message from build ' + "${buildnum}" + "${BUILD_TIMESTAMP}"
                                 // echo "${BUILD_TIMESTAMP}"
@@ -51,7 +56,7 @@ pipeline {
                                 
                             
                             echo "${transition}"
-                            def transitionInput = [transition: [id: '11']]
+                            //def transitionInput = [transition: [id: '11']]
                             //  echo "${transition2}"
                             
                             //echo "${transition}.data.toString()"
