@@ -16,6 +16,9 @@ pipeline {
     //TimeStamp = env.BUILD_TIMESTAMP
     
     transition = jiraGetIssueTransitions idOrKey: 'dev-4', site: 'jira'
+    transition2 = jiraGetIssueTransitions idOrKey: 'dev-2', site: 'jira'
+    
+    transitionInput = [transition: [id: '11']]
     
   }
 
@@ -41,6 +44,9 @@ pipeline {
                                 
                             
                             echo "${transition}"
+                              echo "${transition2}"
+                            
+                                jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net', idOrKey: 'dev-2'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
