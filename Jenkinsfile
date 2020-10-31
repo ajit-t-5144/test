@@ -27,7 +27,7 @@ pipeline {
   }
 
   tools{
-        Groovy 'groovy'  
+        groovy 'groovy'  
   }
 
   stages {
