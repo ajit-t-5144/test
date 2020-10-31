@@ -51,7 +51,7 @@ pipeline {
                                 
                             
                             echo "${transition}"
-                            define transitionInput = [transition: [id: '11']]
+                            def transitionInput = [transition: [id: '11']]
                             //  echo "${transition2}"
                             
                             //echo "${transition}.data.toString()"
