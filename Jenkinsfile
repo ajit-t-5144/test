@@ -20,7 +20,7 @@ pipeline {
     
     transition2 = transitionx.data.toString()
     
-    transitionInput = transitions id: '11'
+    transitionInput = "transition [id: '11']"
     
   }
 
@@ -46,11 +46,11 @@ pipeline {
                                 
                             
                             echo "${transition}"
-                              echo "${transition2}"
+                            //  echo "${transition2}"
                             
-                            echo "${transition}.data.toString()"
+                            //echo "${transition}.data.toString()"
                             
-                               // jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
+                               jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net', idOrKey: 'dev-2'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
