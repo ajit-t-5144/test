@@ -41,7 +41,7 @@ pipeline {
                                 
                                 //define transitionInput = [transition: [id: 'dev-4']]
                             
-                                jiraTransitionIssue idOrKey: 'dev-4',site: 'jira'
+                                jiraTransitionIssue idOrKey: 'dev-4',site: 'jira', input: '2'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
