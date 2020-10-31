@@ -55,13 +55,13 @@ pipeline {
                                 //jiraAddComment comment: '"hello World"', idOrKey: 'dev-2', site: 'jira'
                                 
                             
-                            echo "${transition}"
+                            //echo "${transition}"
                             //def transitionInput = [transition: [id: '11']]
                             //  echo "${transition2}"
                             
                             //echo "${transition}.data.toString()"
                             
-                              // jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
+                              jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net', idOrKey: 'dev-2'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
