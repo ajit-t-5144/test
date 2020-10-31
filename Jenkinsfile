@@ -20,7 +20,7 @@ pipeline {
     
     transition2 = transitionx.data.toString()
     
-    transitionInput = "transition [id: '11']"
+    transitionInput = "[transition: [id: '11']]"
     
   }
 
