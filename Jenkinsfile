@@ -18,7 +18,7 @@ pipeline {
     transition = jiraGetIssueTransitions idOrKey: 'dev-4', site: 'jira'
     transition2 = jiraGetIssueTransitions idOrKey: 'dev-2', site: 'jira'
     
-    transitionInput = transition: [id: '11']
+    transitionInput = transition id: '11'
     
   }
 
