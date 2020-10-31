@@ -1,6 +1,6 @@
 //this is define section 
 
-def transitionInput = [transition: [id: '11']]
+def transitionInput = [transition: [id: '31']]
 
 pipeline {
   agent any
