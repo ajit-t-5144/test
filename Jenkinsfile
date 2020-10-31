@@ -1,6 +1,6 @@
 //this is define section 
 
-def transitionInput = [transition: [id: '31']]
+def transitionInput = [transition: [id: '11']]
 
 pipeline {
   agent any
@@ -61,7 +61,9 @@ pipeline {
                             
                             //echo "${transition}.data.toString()"
                             
-                              jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
+                              //jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
+                            
+                            jiraSendBuildInfo branch: '', site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net', idOrKey: 'dev-2'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
