@@ -23,34 +23,14 @@ pipeline {
   stages {
     stage('TestBlaze') {
         
-        parallel{
-              
-              stage ('1'){ 
-                          steps {
-                                echo " this is step a " 
-                                //slackSend channel: '#personal', message: 'this is a Test message from build ' + "${buildnum}"
-                                //echo "${BUILD_TIMESTAMP}"
-                                }
-                        }
-              stage ('2'){ 
-                          def transitionInput = [transition: [id: 'dev-4']]
-                          
-                          steps {
-                                echo " this is step b " 
-                                //slackSend channel: '#personal', message: "${currentBuild.currentResult}" + 'this is a Test message from build ' + "${buildnum}" + "${BUILD_TIMESTAMP}"
-                                //echo "${BUILD_TIMESTAMP}"
-                               // jiraAddComment comment: '"hello World"', idOrKey: 'dev-4', site: 'jira'
-                                
-                            
-                                jiraTransitionIssue idOrKey: 'dev-4',site: 'jira', input: transitionInput
-                                //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net'
-                                //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
-                                }
-                        }
+        def transitionInput =
+    [
+        transition: [
+            id: '2'
+        ]
+    ]
 
-          
-        } //Para end
-      
+    jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
       } // Stage end 
    
     
