@@ -37,11 +37,11 @@ pipeline {
                                 echo " this is step b " 
                                 //slackSend channel: '#personal', message: "${currentBuild.currentResult}" + 'this is a Test message from build ' + "${buildnum}" + "${BUILD_TIMESTAMP}"
                                 //echo "${BUILD_TIMESTAMP}"
-                                jiraAddComment comment: '"hello World"', idOrKey: 'dev-4', site: 'jira'
+                               // jiraAddComment comment: '"hello World"', idOrKey: 'dev-4', site: 'jira'
                                 
-                                define transitionInput = [transition: [id: 'dev-4']]
+                                //define transitionInput = [transition: [id: 'dev-4']]
                             
-                                jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
+                                jiraTransitionIssue idOrKey: 'dev-4',site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net'
                                 //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
