@@ -72,7 +72,7 @@ pipeline {
                   post{
                       always{
                       //jiraSendBuildInfo branch: "${branchName}", site: 'ajitsahu.atlassian.net'
-                         jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net', serviceId: 'DEV-4',environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
+                         jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net', serviceIds: 'DEV-4',environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
                         //jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net' , environmentId: 'developement', environmentName: 'test-1', environmentType: 'testing', state: 'in_progress'
                          }
                   }
