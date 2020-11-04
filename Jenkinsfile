@@ -1,7 +1,7 @@
 //this is define section 
 
 def transitionInput = [transition: [id: '11']]
-def association = [Association{associationType=serviceIdOrKeys, values=['DEV-4']}]
+def association = [Association{associationType=serviceIdOrKeys: ['DEV-4']}]
 
 pipeline {
   agent any
