@@ -71,8 +71,9 @@ pipeline {
                                 }
                   post{
                       always{
+                        jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'devops-demo', environmentType: 'testing', serviceIds: ['DEV-4'], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                       //jiraSendBuildInfo branch: "${branchName}", site: 'ajitsahu.atlassian.net'
-                         jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net', serviceIds: ['DEV-4'],environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
+                         //jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net', serviceIds: ['DEV-4'],environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
                         //jiraSendDeploymentInfo site: 'ajitsahu.atlassian.net' , environmentId: 'developement', environmentName: 'test-1', environmentType: 'testing', state: 'in_progress'
                          }
                   }
