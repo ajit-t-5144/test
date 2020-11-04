@@ -1,6 +1,7 @@
 //this is define section 
 
 def transitionInput = [transition: [id: '11']]
+def association = [Association{associationType=serviceIdOrKeys, values=['DEV-4']}]
 
 pipeline {
   agent any
@@ -63,10 +64,16 @@ pipeline {
                             
                               //jiraTransitionIssue idOrKey: 'dev-4', input: transitionInput, site: 'jira'
                             
-                            jiraSendBuildInfo branch: '', site: 'jira'
+                            //jiraSendBuildInfo branch: '', site: 'jira'
                                 //jiraSendBuildInfo branch: '', site: 'ajitsahu.atlassian.net', idOrKey: 'dev-2'
-                            jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
+                            //jiraSendDeploymentInfo environmentId: 'test', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
                                 }
+                  post{
+                      always{
+                      //jiraSendBuildInfo branch: "${branchName}", site: 'ajitsahu.atlassian.net'
+                        jiraSendDeploymentInfo environmentId: 'test-1', environmentName: 'test-1', environmentType: 'testing', serviceIds: [''], site: 'ajitsahu.atlassian.net', state: 'in_progress'
+                         }
+                  }
                         }
 
           
